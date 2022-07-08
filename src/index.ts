@@ -1,16 +1,17 @@
-let i: number = 25;
-function reject (message: string): never {
-    throw new Error(message);
-}
+class Account {
+    id: number;
+    owner: string;
+    balance: number;
 
-function processEvents(): never {
-    while (true) {
-        // Read message from a queue
+    constructor(id: number, owner: string, balance: number) {
+        this.id = id;
+        this.owner = owner;
+        this.balance = balance;
+    }
+
+    deposit(amount: number): void {
+        if (amount <= 0)
+            throw new Error('Invalid amount');
+        this.balance += amount; 
     }
 }
-
-reject('...');
-i = 20;
-console.log('Hello World!');
-console.log(1);
-i = 45;

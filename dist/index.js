@@ -1,15 +1,14 @@
 "use strict";
-let i = 25;
-function reject(message) {
-    throw new Error(message);
-}
-function processEvents() {
-    while (true) {
+class Account {
+    constructor(id, owner, balance) {
+        this.id = id;
+        this.owner = owner;
+        this.balance = balance;
+    }
+    deposit(amount) {
+        if (amount <= 0)
+            throw new Error('Invalid amount');
+        this.balance += amount;
     }
 }
-reject('...');
-i = 20;
-console.log('Hello World!');
-console.log(1);
-i = 45;
 //# sourceMappingURL=index.js.map
