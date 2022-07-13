@@ -4,7 +4,7 @@ class Person {
         this.firstName = firstName;
         this.lastName = lastName;
     }
-    getFullName() {
+    get fullName() {
         return this.firstName + ' ' + this.lastName;
     }
     walk() {
@@ -20,6 +20,11 @@ class Student extends Person {
         console.log('Taking test...');
     }
 }
-let student = new Student(1, 'John', 'Legend');
-console.log(student.getFullName());
+class Teacher extends Person {
+    get fullName() {
+        return 'Professor ' + super.fullName;
+    }
+}
+let teacher = new Teacher('John', 'Smith');
+console.log(teacher.fullName);
 //# sourceMappingURL=index.js.map
