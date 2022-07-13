@@ -17,7 +17,6 @@ class Student extends Person {
 
     takeTest() {
         console.log('Taking test...');
-        
     }
 }
 
