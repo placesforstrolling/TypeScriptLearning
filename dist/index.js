@@ -1,8 +1,8 @@
 "use strict";
-class ArrayUtils {
-    static wrapInArray(value) {
-        return [value];
-    }
+var _a;
+function fetch(url) {
+    return { data: null, error: null, from: url };
 }
-let numbers = ArrayUtils.wrapInArray(null);
+let result = fetch('url');
+(_a = result.data) === null || _a === void 0 ? void 0 : _a.title;
 //# sourceMappingURL=index.js.map
