@@ -1,13 +1,10 @@
 class Account {
-    readonly id: number;
-    owner: string;
-    private _balance: number;
     nickname?: string;
 
-    constructor(id: number, owner: string, balance: number) {
-        this.id = id;
-        this.owner = owner;
-        this._balance = balance;
+    constructor(
+        public readonly id: number,
+        public owner: string,
+        private _balance: number) {
     }
 
     deposit(amount: number): void {
@@ -16,11 +13,18 @@ class Account {
         
         this._balance += amount; 
     }
-
-    getBalance(): number {
+    
+    get balance(): number {
         return  this._balance;
+    }
+
+    set balance(value: number) {
+        if (value < 0)
+            throw new Error('Invalid value');
+        this._balance = value;
     }
 }
 
 let account = new Account(1, 'Mo', 0);
-console.log(account.getBalance());
+console.log(account.balance);
+account.balance = 2;
