@@ -1,9 +1,7 @@
-class KeyValuePair {
-    constructor(public key: number, public value: string) {}
-}
 
-class StringKeyValuePair {
-    constructor(public key: string, public value: string) {}
+class ArrayUtils {
+    static wrapInArray<T>(value: T) {
+        return [value];
+    }
 }
-
-let pair = new StringKeyValuePair('1', 'Apple');
+let numbers = ArrayUtils.wrapInArray(null);
