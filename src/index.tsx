@@ -1,13 +1,21 @@
-class Person {
-    constructor(public name: string) {}
+interface Product {
+    name: string;
+    price: number;
 }
 
-class Customer extends Person {
-
+type Optional<T> = {
+    [K in keyof T]?: T[K]
 }
 
-function echo<T extends Person>(value: T): T {
-    return value;
+type Nullable<T> = {
+    [K in keyof T]?: T[K] | null
 }
 
-echo (new Person('a'))
+type ReadOnly<T> = {
+    readonly [K in keyof T]: T[K]
+}
+
+let product: ReadOnly<Product> = {
+    name: 'a',
+    price: 1
+};
